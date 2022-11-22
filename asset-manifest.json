@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/chuck-jokes/static/css/main.8d438491.css",
+    "main.js": "/chuck-jokes/static/js/main.c690d8c3.js",
+    "static/js/787.d6d3c9c9.chunk.js": "/chuck-jokes/static/js/787.d6d3c9c9.chunk.js",
+    "static/media/bg-header.png": "/chuck-jokes/static/media/bg-header.471b5b1d67bf4907dcfb.png",
+    "static/media/bg-footer.png": "/chuck-jokes/static/media/bg-footer.3974328bdd793daa6b76.png",
+    "static/media/Montserrat-BlackItalic.ttf": "/chuck-jokes/static/media/Montserrat-BlackItalic.4404f7c61ef37bcfd52a.ttf",
+    "static/media/Montserrat-Black.ttf": "/chuck-jokes/static/media/Montserrat-Black.46e8b3d6aad654578958.ttf",
+    "static/media/Montserrat-ExtraBoldItalic.ttf": "/chuck-jokes/static/media/Montserrat-ExtraBoldItalic.6849a97dd651acfb619a.ttf",
+    "static/media/Montserrat-SemiBoldItalic.ttf": "/chuck-jokes/static/media/Montserrat-SemiBoldItalic.b04000635199f25a1278.ttf",
+    "static/media/Montserrat-Italic.ttf": "/chuck-jokes/static/media/Montserrat-Italic.e7728c27ba36b97eb82f.ttf",
+    "static/media/Montserrat-MediumItalic.ttf": "/chuck-jokes/static/media/Montserrat-MediumItalic.54b24d993e603e7e52c1.ttf",
+    "static/media/Montserrat-LightItalic.ttf": "/chuck-jokes/static/media/Montserrat-LightItalic.d79f80a4862fa88db7c2.ttf",
+    "static/media/Montserrat-ExtraLightItalic.ttf": "/chuck-jokes/static/media/Montserrat-ExtraLightItalic.338d80b0603bc186b146.ttf",
+    "static/media/Montserrat-Regular.ttf": "/chuck-jokes/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/Montserrat-ThinItalic.ttf": "/chuck-jokes/static/media/Montserrat-ThinItalic.3096cb47ac2a0c8020aa.ttf",
+    "static/media/Montserrat-ExtraBold.ttf": "/chuck-jokes/static/media/Montserrat-ExtraBold.1944c8d1a118759a4435.ttf",
+    "static/media/Montserrat-Bold.ttf": "/chuck-jokes/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
+    "static/media/Montserrat-SemiBold.ttf": "/chuck-jokes/static/media/Montserrat-SemiBold.fa8441f345d83a0bc4ec.ttf",
+    "static/media/Montserrat-Medium.ttf": "/chuck-jokes/static/media/Montserrat-Medium.e2d60bc49517598c0ce8.ttf",
+    "static/media/Montserrat-ExtraLight.ttf": "/chuck-jokes/static/media/Montserrat-ExtraLight.62a749ca2820713ebbf8.ttf",
+    "static/media/Montserrat-Light.ttf": "/chuck-jokes/static/media/Montserrat-Light.02afb26fe72fcc052988.ttf",
+    "static/media/Montserrat-Thin.ttf": "/chuck-jokes/static/media/Montserrat-Thin.4a799b111f608dbf4f89.ttf",
+    "index.html": "/chuck-jokes/index.html",
+    "main.8d438491.css.map": "/chuck-jokes/static/css/main.8d438491.css.map",
+    "main.c690d8c3.js.map": "/chuck-jokes/static/js/main.c690d8c3.js.map",
+    "787.d6d3c9c9.chunk.js.map": "/chuck-jokes/static/js/787.d6d3c9c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d438491.css",
+    "static/js/main.c690d8c3.js"
+  ]
+}

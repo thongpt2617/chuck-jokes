@@ -1,7 +1,8 @@
 import "./overview.scss";
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { getAllJokes, getCategories } from "utils/api";
 import JokeCard from "components/joke/joke-card";
+import ArrowDownIcon from "assets/icon-arrow-down.png";
 
 const getCategoryClassName = (category) => {
   let postFix = "";
@@ -39,11 +40,15 @@ const getCategoryClassName = (category) => {
   return `category-${postFix}`;
 };
 
+const SHOWING_COUNT = 6;
+
 const OverviewPage = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [jokes, setJokes] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [viewingAll, setViewingAll] = useState(false);
+  const [showingCount, setShowingCount] = useState(SHOWING_COUNT);
 
   const filteredJokes = useMemo(() => {
     if (!selectedCategory) return jokes;
@@ -69,7 +74,7 @@ const OverviewPage = () => {
   return (
     <main>
       <div className="categories">
-        {categories.map((cat) => (
+        {categories.slice(0, viewingAll ? categories.length : 7).map((cat) => (
           <div
             key={cat}
             className={`${getCategoryClassName(cat)} ${
@@ -77,28 +82,50 @@ const OverviewPage = () => {
             }`}
             aria-hidden
             onClick={() => setSelectedCategory(cat)}
-          >{`${cat} jokes`}</div>
+          >
+            <p>{`${cat} jokes`}</p>
+          </div>
         ))}
+        <div
+          className="view_all_btn"
+          aria-hidden
+          onClick={() => setViewingAll((pre) => !pre)}
+        >
+          <p>view {viewingAll ? "less" : "all"}</p>
+          {!viewingAll && <img src={ArrowDownIcon} alt="more-icon" />}
+        </div>
       </div>
       <div className="jokes">
         {selectedCategory && (
-          <div
-            className={`${getCategoryClassName(
-              selectedCategory
-            )} category__badge`}
-          >{`${selectedCategory} jokes`}</div>
+          <div className="jokes-header">
+            <div
+              className={`${getCategoryClassName(
+                selectedCategory
+              )} category__badge`}
+            >{`${selectedCategory} jokes`}</div>
+          </div>
         )}
         {filteredJokes.length ? (
-          <div className="jokes-grid">
-            {filteredJokes.map((joke) => (
-              <JokeCard
-                value={joke?.value}
-                category={joke?.categories[0]}
-                id={joke.id}
-                url={joke.ur}
-              />
-            ))}
-          </div>
+          <Fragment>
+            <div className="jokes-grid">
+              {filteredJokes.slice(0, showingCount).map((joke) => (
+                <JokeCard
+                  value={joke?.value}
+                  category={joke?.categories[0]}
+                  id={joke.id}
+                  url={joke.ur}
+                />
+              ))}
+            </div>
+            <div
+              className="view_more_btn"
+              aria-hidden
+              onClick={() => setShowingCount((pre) => pre + SHOWING_COUNT)}
+            >
+              <p>view more</p>
+              <img src={ArrowDownIcon} alt="more-icon" />
+            </div>
+          </Fragment>
         ) : (
           <p className="empty">No related joke found!</p>
         )}

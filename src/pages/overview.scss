@@ -12,12 +12,16 @@
   padding: 1rem;
   text-transform: uppercase;
   font-size: 0.85rem;
-  font-weight: 600;
   text-align: center;
   border-radius: 2px;
   user-select: none;
   cursor: pointer;
   border: 1px solid transparent;
+
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
 
   &-a {
     background-color: $color-red;
@@ -65,12 +69,48 @@
     border-radius: 10rem;
     position: absolute;
     font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+.view_all_btn {
+  @extend .category;
+  color: $color-brown;
+  border-color: $color-brown;
+  position: relative;
+
+  img {
+    height: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+.view_more_btn {
+  @extend .view_all_btn;
+  width: fit-content;
+  display: flex;
+  img {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-left: 0.5rem;
   }
 }
 
 .jokes {
   border-top: 1px solid $color-white-three;
   position: relative;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-header {
+    width: 100%;
+  }
+
   &-grid {
     padding: 3rem 0;
     display: grid;

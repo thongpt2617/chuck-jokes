@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
   h1 {
     text-align: center;
     font-size: 3rem;
@@ -41,8 +42,26 @@
       outline: none;
       width: 20rem;
     }
+    
     img {
       height: 1rem;
     }
+
+    &__focus {
+      @extend .search-input;
+      background-color: $color-white;
+      input {
+        color: $color-black;
+      }
+    }
+  }
+
+  .dropdown-anchor {
+    width: 30rem;
+  }
+
+  .dropdown {
+    width: 30rem;
+    top: -1rem;
   }
 }

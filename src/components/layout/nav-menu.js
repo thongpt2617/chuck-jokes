@@ -18,24 +18,22 @@ const NavMenu = () => {
         <p>main bereich</p>
         <img src={ExpandIcon} alt="expand-icon" />
       </div>
-      <div className="dropdown-container">
-        <Dropdown
-          isOpened={showDropdown}
-          onToggle={() => setShowDropdown((pre) => !pre)}
-          options={[
-            {
-              name: "My published jokes",
-              isHighlighted: false,
-            },
-            {
-              name: "My saved jokes",
-              isHighlighted: false,
-            },
-            { name: "Account information", isHighlighted: false },
-            { name: "Publish new joke", isHighlighted: true },
-          ]}
-        />
-      </div>
+      <Dropdown
+        isOpened={showDropdown}
+        onToggle={() => setShowDropdown((pre) => !pre)}
+        options={[
+          {
+            name: "My published jokes",
+            isHighlighted: false,
+          },
+          {
+            name: "My saved jokes",
+            isHighlighted: false,
+          },
+          { name: "Account information", isHighlighted: false },
+          { name: "Publish new joke", isHighlighted: true },
+        ]}
+      />
     </div>
   );
 };

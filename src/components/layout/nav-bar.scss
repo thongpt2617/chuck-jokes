@@ -6,9 +6,10 @@
   display: flex;
   column-gap: 2rem;
   justify-content: right;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   .first-item {
-    background-color: red;
   }
 }

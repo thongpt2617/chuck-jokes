@@ -24,3 +24,8 @@ export const getAllJokes = async () => {
   const url = `${URL}/search?query=all`;
   return baseRequest(url);
 };
+
+export const getSearchJokes = async (search) => {
+  const url = `${URL}/search?query=${search}`;
+  return baseRequest(url);
+};

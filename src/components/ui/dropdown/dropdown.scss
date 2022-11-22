@@ -2,7 +2,6 @@
 
 .anchor {
   position: relative;
-  height: 0;
 }
 
 .dropdown {
@@ -13,24 +12,42 @@
   padding: 0.25rem;
   border-radius: 2px;
   box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-height: 30rem;
+  overflow-y: auto;
 
-  p {
-    margin: 0;
-    font-size: 0.8rem;
-    line-height: 1.25rem;
+  .option {
     border-bottom: 1.5px solid $color-white-three;
-    color: $color-dark-grey;
-    padding: 0.3rem;
+    padding: 0.5rem;
     user-select: none;
     cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+
+    p {
+      text-align: left;
+      margin: 0;
+      color: $color-dark-grey;
+      font-size: 0.8rem;
+      line-height: 1.25rem;
+      font-weight: 400;
+    }
+
+    img {
+      height: 1rem;
+      margin-right: 0.5rem;
+    }
   }
 
-  p.highlighted {
+  .option.highlighted {
+    @extend .option;
     font-weight: 600;
-    color: $color-brown;
+    p {
+      color: $color-brown;
+    }
   }
 
-  p:last-child {
+  .option:last-child {
     border: none;
   }
 }

@@ -1,0 +1,10 @@
+@import "/src/common/styles.scss";
+
+.nav-item {
+  text-transform: uppercase;
+  color: $color-white;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}

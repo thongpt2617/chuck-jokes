@@ -1,0 +1,14 @@
+@import "/src/common/styles.scss";
+
+.nav-bar {
+  background-color: $color-black;
+  padding: 1rem 4rem;
+  display: flex;
+  column-gap: 2rem;
+  justify-content: right;
+  position: relative;
+
+  .first-item {
+    background-color: red;
+  }
+}

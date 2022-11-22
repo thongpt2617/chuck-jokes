@@ -1,0 +1,29 @@
+@import "/src/common/styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $color-brown;
+  margin: -1rem 0;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0 0.5rem;
+  user-select: none;
+  p {
+    margin: 0;
+    text-transform: uppercase;
+    color: $color-white-two;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  img {
+    max-height: 1rem;
+    max-width: 1rem;
+  }
+}

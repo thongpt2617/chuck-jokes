@@ -1,0 +1,40 @@
+@import "/src/common/styles.scss";
+
+.footer {
+  background-image: url("../../assets/bg-footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 6rem;
+  padding: 2rem 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    text-transform: uppercase;
+    color: $color-white;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0;
+    margin: 1rem 0;
+
+    p {
+      color: $color-brown;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    img {
+      height: 1rem;
+    }
+  }
+}

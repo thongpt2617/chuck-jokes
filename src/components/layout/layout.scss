@@ -10,3 +10,16 @@
   flex: 1;
   padding: 0 8rem;
 }
+
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .main {
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  .main {
+    padding: 0.5rem;
+  }
+}

@@ -27,3 +27,15 @@
     max-width: 1rem;
   }
 }
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  .nav-menu {
+    p {
+      font-size: 0.5rem;
+    }
+    img {
+      max-height: 0.5rem;
+      max-width: 0.5rem;
+    }
+  }
+}

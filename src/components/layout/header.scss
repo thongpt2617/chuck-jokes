@@ -42,7 +42,7 @@
       outline: none;
       width: 20rem;
     }
-    
+
     img {
       height: 1rem;
     }
@@ -63,5 +63,42 @@
   .dropdown {
     width: 30rem;
     top: -1rem;
+  }
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .header {
+    .search-input {
+      input {
+        width: 16rem;
+      }
+    }
+
+    .dropdown-anchor {
+      width: 16rem;
+    }
+
+    .dropdown {
+      width: 16rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  .header {
+    .search-input {
+      input {
+        width: 10rem;
+        padding: 0.5rem 0.5rem;
+      }
+    }
+
+    .dropdown-anchor {
+      width: 16rem;
+    }
+
+    .dropdown {
+      width: 16rem;
+    }
   }
 }

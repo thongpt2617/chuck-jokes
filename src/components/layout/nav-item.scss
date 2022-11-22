@@ -8,3 +8,9 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  .nav-item {
+    font-size: 0.5rem;
+  }
+}

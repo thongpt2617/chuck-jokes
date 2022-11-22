@@ -122,3 +122,23 @@
 .empty {
   margin: 3rem 0;
 }
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .categories {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .jokes-grid {
+    grid-template-columns: repeat(3, calc((100vw - 8rem) / 3));
+  }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jokes-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

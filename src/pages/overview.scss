@@ -1,0 +1,84 @@
+@import "/src/common/styles.scss";
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  padding: 2.5rem 0;
+}
+
+.category {
+  color: $color-white;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 2px;
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &-a {
+    background-color: $color-red;
+    @extend .category;
+  }
+
+  &-b {
+    background-color: $color-pastel-orange;
+    @extend .category;
+  }
+
+  &-c {
+    background-color: $color-pale-orange;
+    @extend .category;
+  }
+
+  &-d {
+    background-color: $color-light-gold;
+    @extend .category;
+  }
+
+  &-e {
+    background-color: $color-kiwi-green;
+    @extend .category;
+  }
+
+  &-f {
+    background-color: $color-weird-green;
+    @extend .category;
+  }
+
+  &-default {
+    background-color: $color-blue;
+    @extend .category;
+  }
+
+  &__selected {
+    color: $color-dark-grey;
+    border: 1px solid $color-dark-grey;
+  }
+
+  &__badge {
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10rem;
+    position: absolute;
+    font-size: 0.75rem;
+  }
+}
+
+.jokes {
+  border-top: 1px solid $color-white-three;
+  position: relative;
+  &-grid {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, calc((100vw - 20rem) / 3));
+    gap: 1.5rem;
+  }
+}
+
+.empty {
+  margin: 3rem 0;
+}

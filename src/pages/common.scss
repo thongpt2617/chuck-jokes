@@ -1,0 +1,31 @@
+@import "/src/common/styles.scss";
+
+.category {
+  &-a {
+    background-color: $color-red;
+  }
+
+  &-b {
+    background-color: $color-pastel-orange;
+  }
+
+  &-c {
+    background-color: $color-pale-orange;
+  }
+
+  &-d {
+    background-color: $color-light-gold;
+  }
+
+  &-e {
+    background-color: $color-kiwi-green;
+  }
+
+  &-f {
+    background-color: $color-weird-green;
+  }
+
+  &-default {
+    background-color: $color-blue;
+  }
+}

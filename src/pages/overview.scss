@@ -8,54 +8,25 @@
 }
 
 .category {
-  color: $color-white;
-  padding: 1rem;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  text-align: center;
-  border-radius: 2px;
-  user-select: none;
-  cursor: pointer;
-  border: 1px solid transparent;
+  &-tag {
+    color: $color-white;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    text-align: center;
+    border-radius: 2px;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
 
-  p {
-    margin: 0;
-    font-weight: 600;
-  }
-
-  &-a {
-    background-color: $color-red;
-    @extend .category;
-  }
-
-  &-b {
-    background-color: $color-pastel-orange;
-    @extend .category;
-  }
-
-  &-c {
-    background-color: $color-pale-orange;
-    @extend .category;
-  }
-
-  &-d {
-    background-color: $color-light-gold;
-    @extend .category;
-  }
-
-  &-e {
-    background-color: $color-kiwi-green;
-    @extend .category;
-  }
-
-  &-f {
-    background-color: $color-weird-green;
-    @extend .category;
+    p {
+      margin: 0;
+      font-weight: 600;
+    }
   }
 
   &-default {
     background-color: $color-blue;
-    @extend .category;
   }
 
   &__selected {
@@ -63,7 +34,8 @@
     border: 1px solid $color-dark-grey;
   }
 
-  &__badge {
+  &-badge {
+    @extend .category-tag;
     width: fit-content;
     padding: 0.25rem 0.5rem;
     border-radius: 10rem;
@@ -73,8 +45,8 @@
   }
 }
 
-.view_all_btn {
-  @extend .category;
+.view-all-btn {
+  @extend .category-tag;
   color: $color-brown;
   border-color: $color-brown;
   position: relative;
@@ -87,8 +59,8 @@
   }
 }
 
-.view_more_btn {
-  @extend .view_all_btn;
+.view-more-btn {
+  @extend .view-all-btn;
   width: fit-content;
   display: flex;
   img {

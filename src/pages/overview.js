@@ -1,48 +1,12 @@
+import "./common.scss";
 import "./overview.scss";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { getAllJokes, getCategories } from "utils/api";
 import JokeCard from "components/joke/joke-card";
 import ArrowDownIcon from "assets/icon-arrow-down.png";
+import { getCategoryClassName, SHOWING_COUNT } from "./utils";
 
-const getCategoryClassName = (category) => {
-  let postFix = "";
-  switch (category) {
-    case "animal":
-    case "history":
-    case "sport":
-      postFix = "a";
-      break;
-    case "career":
-    case "money":
-    case "travel":
-      postFix = "b";
-      break;
-    case "celebrity":
-    case "movie":
-      postFix = "c";
-      break;
-    case "dev":
-    case "music":
-      postFix = "d";
-      break;
-    case "explicit":
-    case "political":
-      postFix = "e";
-      break;
-    case "fashion":
-    case "religion":
-      postFix = "f";
-      break;
-    default:
-      postFix = "default";
-      break;
-  }
-  return `category-${postFix}`;
-};
-
-const SHOWING_COUNT = 6;
-
-const OverviewPage = () => {
+const OverviewPage = ({ onSelectJoke = () => {} }) => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [jokes, setJokes] = useState([]);
@@ -77,7 +41,7 @@ const OverviewPage = () => {
         {categories.slice(0, viewingAll ? categories.length : 7).map((cat) => (
           <div
             key={cat}
-            className={`${getCategoryClassName(cat)} ${
+            className={`category-tag ${getCategoryClassName(cat)} ${
               cat === selectedCategory ? "category__selected" : ""
             }`}
             aria-hidden
@@ -87,7 +51,7 @@ const OverviewPage = () => {
           </div>
         ))}
         <div
-          className="view_all_btn"
+          className="view-all-btn"
           aria-hidden
           onClick={() => setViewingAll((pre) => !pre)}
         >
@@ -101,8 +65,10 @@ const OverviewPage = () => {
             <div
               className={`${getCategoryClassName(
                 selectedCategory
-              )} category__badge`}
-            >{`${selectedCategory} jokes`}</div>
+              )} category-badge`}
+            >
+              <p>{`${selectedCategory} jokes`}</p>
+            </div>
           </div>
         )}
         {filteredJokes.length ? (
@@ -114,11 +80,12 @@ const OverviewPage = () => {
                   category={joke?.categories[0]}
                   id={joke.id}
                   url={joke.ur}
+                  onSelect={() => onSelectJoke(joke)}
                 />
               ))}
             </div>
             <div
-              className="view_more_btn"
+              className="view-more-btn"
               aria-hidden
               onClick={() => setShowingCount((pre) => pre + SHOWING_COUNT)}
             >

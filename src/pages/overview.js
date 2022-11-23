@@ -1,7 +1,7 @@
 import "./common.scss";
 import "./overview.scss";
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { getAllJokes, getCategories } from "utils/api";
+import { getCategories } from "utils/api";
 import JokeCard from "components/joke/joke-card";
 import ArrowDownIcon from "assets/icon-arrow-down.png";
 import { getCategoryClassName, SHOWING_COUNT } from "./utils";
@@ -21,7 +21,6 @@ const OverviewPage = ({ jokes = [], onSelectJoke = () => {} }) => {
   useEffect(() => {
     (async () => {
       setLoading(true);
-      const resAllJokes = await getAllJokes();
       const resCategories = await getCategories();
 
       setCategories(resCategories);
@@ -74,6 +73,7 @@ const OverviewPage = ({ jokes = [], onSelectJoke = () => {} }) => {
             <div className="jokes-grid">
               {filteredJokes.slice(0, showingCount).map((joke) => (
                 <JokeCard
+                  key={joke?.value}
                   value={joke?.value}
                   category={joke?.categories[0]}
                   id={joke.id}

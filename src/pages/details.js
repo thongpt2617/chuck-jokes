@@ -1,4 +1,5 @@
 import "./details.scss";
+import { useCallback } from "react";
 import ArrowLeftIcon from "assets/icon-arrow-left.png";
 import NavigationButton from "components/buttons/navigation-button";
 import ReactionButton from "components/buttons/reaction-button";
@@ -10,9 +11,22 @@ const DetailsPage = ({
   jokes = [],
   onBack = () => {},
 }) => {
-  console.log({ details });
   const category = details?.categories[0] || "uncategorized";
   const index = jokes.findIndex((joke) => joke.id === details.id) + 1;
+
+  const handleNext = useCallback(() => {
+    const newIndex = index;
+    if (newIndex < jokes.length) {
+      onChangeJoke(jokes[newIndex]);
+    }
+  }, [index, jokes, onChangeJoke]);
+
+  const handlePrev = useCallback(() => {
+    const newIndex = index - 2;
+    if (newIndex > 0) {
+      onChangeJoke(jokes[newIndex]);
+    }
+  }, [index, jokes, onChangeJoke]);
 
   return (
     <main className="details-page">
@@ -45,15 +59,15 @@ const DetailsPage = ({
               <ReactionButton isDisliked />
             </div>
             <div className="navigations">
-              <NavigationButton isPrevious entity="joke" />
-              <NavigationButton entity="joke" />
+              <NavigationButton isPrevious entity="joke" onClick={handlePrev} />
+              <NavigationButton entity="joke" onClick={handleNext} />
             </div>
           </div>
         </div>
         <div className="right">
           <h1>the top 10 jokes this week</h1>
           {jokes.slice(0, 10).map((joke) => (
-            <p>{joke.value.substring(0, 30)}...</p>
+            <p key={joke.value}>{joke.value.substring(0, 30)}...</p>
           ))}
         </div>
       </div>

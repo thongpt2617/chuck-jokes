@@ -13,12 +13,17 @@
     flex-direction: column;
     align-items: center;
 
-    p.dislike {
-      color: $color-red;
-    }
+    p {
+      font-size: 0.75rem;
+      font-weight: 600;
 
-    p.like {
-      color: $color-weird-green;
+      &.dislike {
+        color: $color-red;
+      }
+
+      &.like {
+        color: $color-weird-green;
+      }
     }
   }
 

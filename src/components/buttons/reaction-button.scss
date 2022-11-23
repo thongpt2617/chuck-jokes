@@ -1,0 +1,40 @@
+@import "/src/common/styles.scss";
+
+.reaction-btn {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p.dislike {
+      color: $color-red;
+    }
+
+    p.like {
+      color: $color-weird-green;
+    }
+  }
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &.like-btn {
+    background-color: $color-weird-green;
+  }
+
+  &.dislike-btn {
+    background-color: $color-red;
+  }
+}

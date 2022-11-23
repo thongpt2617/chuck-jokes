@@ -6,10 +6,9 @@ import JokeCard from "components/joke/joke-card";
 import ArrowDownIcon from "assets/icon-arrow-down.png";
 import { getCategoryClassName, SHOWING_COUNT } from "./utils";
 
-const OverviewPage = ({ onSelectJoke = () => {} }) => {
+const OverviewPage = ({ jokes = [], onSelectJoke = () => {} }) => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [jokes, setJokes] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [viewingAll, setViewingAll] = useState(false);
   const [showingCount, setShowingCount] = useState(SHOWING_COUNT);
@@ -25,7 +24,6 @@ const OverviewPage = ({ onSelectJoke = () => {} }) => {
       const resAllJokes = await getAllJokes();
       const resCategories = await getCategories();
 
-      setJokes(resAllJokes?.result || []);
       setCategories(resCategories);
       setLoading(false);
     })();

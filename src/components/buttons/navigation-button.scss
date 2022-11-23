@@ -1,0 +1,29 @@
+@import "/src/common/styles.scss";
+
+.navigation-btn {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+  column-gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  border: 1px solid $color-white-three;
+  background-color: $color-white-two;
+
+  &:hover {
+    background-color: $color-white-two;
+  }
+
+  p {
+    margin: 0;
+    text-transform: uppercase;
+    color: $color-brown;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  img {
+    height: 1rem;
+  }
+}

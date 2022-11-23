@@ -51,3 +51,15 @@
     border: none;
   }
 }
+
+@media only screen and (max-width: $tablet-breakpoint) {
+  .dropdown {
+    min-width: 10rem;
+  }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  .dropdown {
+    min-width: 6rem;
+  }
+}
